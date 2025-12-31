@@ -10,7 +10,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { dashboard, siswa, kelas, guru } from '@/routes';
+import { dashboard, siswa, kelas, guru, orangtua } from '@/routes';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
 import { BookOpen, Users, User, LayoutGrid, GraduationCapIcon } from 'lucide-react';
@@ -36,6 +36,11 @@ const mainNavItems: NavItem[] = [
         title: 'Manage Guru',
         href: guru(),
         icon: GraduationCapIcon,
+    },
+    {
+        title: 'Manage Orang Tua',
+        href: orangtua(),
+        icon: User,
     },
 ];
 

@@ -26,13 +26,18 @@ interface Kelas {
     id: number;
     nama_kelas: string;
 }
+interface Ortu {
+    id: number;
+    nama_ortu: string;
+}
 
-export default function Create({ text, list_kelas }: { text: string, list_kelas: Kelas[] }) {
+export default function Create({ text, list_kelas, list_ortu }: { text: string, list_kelas: Kelas[], list_ortu: Ortu[] }) {
     const { errors, flash } = usePage().props;
 
     const { data, setData, post, processing } = useForm({
         nama_siswa: '',
         kelas_id: '',
+        ortu_id: '',
     });
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -40,11 +45,6 @@ export default function Create({ text, list_kelas }: { text: string, list_kelas:
         post('/siswa');
     };
 
-    const datas = [
-        { id: 1, nama_kelas: 'Kelas A' },
-        { id: 2, nama_kelas: 'Kelas B' },
-        { id: 3, nama_kelas: 'Kelas C' },
-    ];
 
     return (
         <Dialog>
@@ -84,6 +84,19 @@ export default function Create({ text, list_kelas }: { text: string, list_kelas:
                                 </SelectContent>
                             </Select>
                             {errors && (<div className="text-sm text-red-600 mt-2">{errors.kelas_id}</div>
+                            )}
+                            <Label htmlFor="name-1">Daftar Orang Tua</Label>
+                            <Select onValueChange={(value) => setData('ortu_id', value)}  name="ortu_id">
+                                <SelectTrigger className="w-full">
+                                    <SelectValue placeholder="Pilih Orang Tua" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    {list_ortu.map((kelas) => (
+                                        <SelectItem key={kelas.id} value={kelas.id.toString()}>{kelas.nama_ortu}</SelectItem>
+                                    ))}
+                                </SelectContent>
+                            </Select>
+                            {errors && (<div className="text-sm text-red-600 mt-2">{errors.ortu_id}</div>
                             )}
                         </div>
                     </div>

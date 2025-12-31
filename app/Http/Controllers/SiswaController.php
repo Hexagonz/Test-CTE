@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Siswa;
 use App\Models\Kelas;
+use App\Models\OrangTua;
 use App\Http\Requests\StoreSiswaRequest;
 use App\Http\Requests\UpdateSiswaRequest;
 
@@ -14,9 +15,10 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        $siswa = Siswa::with('kelas')->get();
+        $siswa = Siswa::with('kelas','ortu')->get();
         $kelas = Kelas::all();
-        return inertia('Siswa/Index', compact('siswa', 'kelas'));
+        $ortu = OrangTua::all();
+        return inertia('Siswa/Index', compact('siswa', 'kelas', 'ortu'));
     }
 
     /**

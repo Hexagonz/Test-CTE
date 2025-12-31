@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('nama_siswa');
             $table->foreignId('kelas_id')->constrained('manage_kelas')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId("ortu_id")->constrained("orang_tua")->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

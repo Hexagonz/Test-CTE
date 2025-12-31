@@ -27,34 +27,25 @@ interface Kelas {
     nama_kelas: string;
 }
 
-interface Siswa {
-    id: number;
-    nama_siswa: string;
-    kelas_id: number;
-    kelas: Kelas;
-    ortu: Ortu;
-}
-
 interface Ortu {
     id: number;
     nama_ortu: string;
+    kelas_id: number;
+    kelas: Kelas;
 }
 
-export default function Edit({ text, list_kelas,list_ortu , siswa }: { text: string, list_kelas: Kelas[],list_ortu: Ortu[], siswa: Siswa }) {
+export default function Edit({ text, ortu }: { text: string , ortu: Ortu }) {
     const { errors, flash } = usePage().props;
-    console.log(siswa)
+
     const { data, setData, put, processing } = useForm({
-        nama_siswa: siswa.nama_siswa,
-        kelas_id: siswa.kelas_id,
-        ortu_id: siswa.ortu.id
+        nama_ortu: ortu.nama_ortu
     });
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        put('/siswa/' + siswa.id);
+        put('/orangtua/' + ortu.id);
     };
 
-    console.log(siswa);
     return (
         <Dialog>
             <DialogTrigger asChild>
@@ -74,17 +65,17 @@ export default function Edit({ text, list_kelas,list_ortu , siswa }: { text: str
                             <Label htmlFor="name-1">Nama {text}</Label>
                             <Input
                                 id="name-1"
-                                name="nama_siswa"
+                                name="nama_ortu"
                                 placeholder="Nama"
-                                value={data.nama_siswa}
-                                onChange={(e) => setData('nama_siswa', e.target.value)}
+                                value={data.nama_ortu}
+                                onChange={(e) => setData('nama_ortu', e.target.value)}
                             />
-                            {errors && (<div className="text-sm text-red-600 mt-2">{errors.nama_siswa}</div>
+                            {errors && (<div className="text-sm text-red-600 mt-2">{errors.nama_ortu}</div>
                             )}
-                            <Label htmlFor="name-2">Daftar Kelas</Label>
+                            {/* <Label htmlFor="name-2">Daftar Kelas</Label>
                             <Select value={data.kelas_id.toString()} onValueChange={(value) => setData('kelas_id', parseInt(value))} name="kel_id" >
                                 <SelectTrigger className="w-full">
-                                    <SelectValue placeholder="Pilih Kelas" />
+                                    <SelectValue placeholder="Pilih Kelas"  />
                                 </SelectTrigger>
                                 <SelectContent>
                                     {list_kelas.map((kelas) => (
@@ -93,20 +84,7 @@ export default function Edit({ text, list_kelas,list_ortu , siswa }: { text: str
                                 </SelectContent>
                             </Select>
                             {errors && (<div className="text-sm text-red-600 mt-2">{errors.kelas_id}</div>
-                            )}
-                            <Label htmlFor="name-1">Daftar Orang Tua</Label>
-                            <Select value={data.ortu_id.toString()} onValueChange={(value) => setData('ortu_id', parseInt(value))} name="ortu_id">
-                                <SelectTrigger className="w-full">
-                                    <SelectValue placeholder="Pilih Orang Tua" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    {list_ortu.map((kelas) => (
-                                        <SelectItem key={kelas.id} value={kelas.id.toString()}>{kelas.nama_ortu}</SelectItem>
-                                    ))}
-                                </SelectContent>
-                            </Select>
-                            {errors && (<div className="text-sm text-red-600 mt-2">{errors.ortu_id}</div>
-                            )}
+                            )} */}
                         </div>
                     </div>
                     <DialogFooter>

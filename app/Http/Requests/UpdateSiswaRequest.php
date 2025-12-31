@@ -24,6 +24,7 @@ class UpdateSiswaRequest extends FormRequest
         return [
             'nama_siswa' => 'required|string|max:255',
             'kelas_id' => 'required|exists:manage_kelas,id',
+            'ortu_id' => 'required|exists:orang_tua,id',
         ];
     }
 }

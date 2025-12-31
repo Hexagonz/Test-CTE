@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\OrangTuaController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\GuruController;
 use App\Models\Kelas;
@@ -28,6 +29,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/guru', [GuruController::class,'store'])->name('guru.store'); 
     Route::put('/guru/{guru}', [GuruController::class,'update'])->name('guru.update');
     Route::delete('/guru/{guru}', [GuruController::class,'destroy'])->name('guru.destroy');
+
+    Route::get('/orangtua', [OrangTuaController::class,'index'])->name('orangtua');
+    Route::post('/orangtua', [OrangTuaController::class,'store'])->name('orangtua.store'); 
+    Route::put('/orangtua/{orangTua}', [OrangTuaController::class,'update'])->name('orangtua.update');
+    Route::delete('/orangtua/{orangTua}', [OrangTuaController::class,'destroy'])->name('orangtua.destroy');
 
     Route::get('/dashboard', function () {
         $kelas = Kelas::with(['siswa', 'guru'])->get();

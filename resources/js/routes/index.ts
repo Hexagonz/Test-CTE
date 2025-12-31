@@ -211,7 +211,7 @@ register.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     
     register.form = registerForm
 /**
- * @see routes/web.php:10
+ * @see routes/web.php:11
  * @route '/'
  */
 export const home = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -225,7 +225,7 @@ home.definition = {
 } satisfies RouteDefinition<["get","head"]>
 
 /**
- * @see routes/web.php:10
+ * @see routes/web.php:11
  * @route '/'
  */
 home.url = (options?: RouteQueryOptions) => {
@@ -233,7 +233,7 @@ home.url = (options?: RouteQueryOptions) => {
 }
 
 /**
- * @see routes/web.php:10
+ * @see routes/web.php:11
  * @route '/'
  */
 home.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -241,7 +241,7 @@ home.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     method: 'get',
 })
 /**
- * @see routes/web.php:10
+ * @see routes/web.php:11
  * @route '/'
  */
 home.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -250,7 +250,7 @@ home.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 })
 
     /**
- * @see routes/web.php:10
+ * @see routes/web.php:11
  * @route '/'
  */
     const homeForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -259,7 +259,7 @@ home.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     })
 
             /**
- * @see routes/web.php:10
+ * @see routes/web.php:11
  * @route '/'
  */
         homeForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -267,7 +267,7 @@ home.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             method: 'get',
         })
             /**
- * @see routes/web.php:10
+ * @see routes/web.php:11
  * @route '/'
  */
         homeForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -283,7 +283,7 @@ home.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     home.form = homeForm
 /**
 * @see \App\Http\Controllers\SiswaController::siswa
- * @see app/Http/Controllers/SiswaController.php:15
+ * @see app/Http/Controllers/SiswaController.php:16
  * @route '/siswa'
  */
 export const siswa = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -298,7 +298,7 @@ siswa.definition = {
 
 /**
 * @see \App\Http\Controllers\SiswaController::siswa
- * @see app/Http/Controllers/SiswaController.php:15
+ * @see app/Http/Controllers/SiswaController.php:16
  * @route '/siswa'
  */
 siswa.url = (options?: RouteQueryOptions) => {
@@ -307,7 +307,7 @@ siswa.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\SiswaController::siswa
- * @see app/Http/Controllers/SiswaController.php:15
+ * @see app/Http/Controllers/SiswaController.php:16
  * @route '/siswa'
  */
 siswa.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -316,7 +316,7 @@ siswa.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\SiswaController::siswa
- * @see app/Http/Controllers/SiswaController.php:15
+ * @see app/Http/Controllers/SiswaController.php:16
  * @route '/siswa'
  */
 siswa.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -326,7 +326,7 @@ siswa.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\SiswaController::siswa
- * @see app/Http/Controllers/SiswaController.php:15
+ * @see app/Http/Controllers/SiswaController.php:16
  * @route '/siswa'
  */
     const siswaForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -336,7 +336,7 @@ siswa.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\SiswaController::siswa
- * @see app/Http/Controllers/SiswaController.php:15
+ * @see app/Http/Controllers/SiswaController.php:16
  * @route '/siswa'
  */
         siswaForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -345,7 +345,7 @@ siswa.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\SiswaController::siswa
- * @see app/Http/Controllers/SiswaController.php:15
+ * @see app/Http/Controllers/SiswaController.php:16
  * @route '/siswa'
  */
         siswaForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -516,7 +516,85 @@ guru.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     
     guru.form = guruForm
 /**
- * @see routes/web.php:32
+* @see \App\Http\Controllers\OrangTuaController::orangtua
+ * @see app/Http/Controllers/OrangTuaController.php:14
+ * @route '/orangtua'
+ */
+export const orangtua = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: orangtua.url(options),
+    method: 'get',
+})
+
+orangtua.definition = {
+    methods: ["get","head"],
+    url: '/orangtua',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\OrangTuaController::orangtua
+ * @see app/Http/Controllers/OrangTuaController.php:14
+ * @route '/orangtua'
+ */
+orangtua.url = (options?: RouteQueryOptions) => {
+    return orangtua.definition.url + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\OrangTuaController::orangtua
+ * @see app/Http/Controllers/OrangTuaController.php:14
+ * @route '/orangtua'
+ */
+orangtua.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: orangtua.url(options),
+    method: 'get',
+})
+/**
+* @see \App\Http\Controllers\OrangTuaController::orangtua
+ * @see app/Http/Controllers/OrangTuaController.php:14
+ * @route '/orangtua'
+ */
+orangtua.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: orangtua.url(options),
+    method: 'head',
+})
+
+    /**
+* @see \App\Http\Controllers\OrangTuaController::orangtua
+ * @see app/Http/Controllers/OrangTuaController.php:14
+ * @route '/orangtua'
+ */
+    const orangtuaForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: orangtua.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\OrangTuaController::orangtua
+ * @see app/Http/Controllers/OrangTuaController.php:14
+ * @route '/orangtua'
+ */
+        orangtuaForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: orangtua.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\OrangTuaController::orangtua
+ * @see app/Http/Controllers/OrangTuaController.php:14
+ * @route '/orangtua'
+ */
+        orangtuaForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: orangtua.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    orangtua.form = orangtuaForm
+/**
+ * @see routes/web.php:38
  * @route '/dashboard'
  */
 export const dashboard = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -530,7 +608,7 @@ dashboard.definition = {
 } satisfies RouteDefinition<["get","head"]>
 
 /**
- * @see routes/web.php:32
+ * @see routes/web.php:38
  * @route '/dashboard'
  */
 dashboard.url = (options?: RouteQueryOptions) => {
@@ -538,7 +616,7 @@ dashboard.url = (options?: RouteQueryOptions) => {
 }
 
 /**
- * @see routes/web.php:32
+ * @see routes/web.php:38
  * @route '/dashboard'
  */
 dashboard.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -546,7 +624,7 @@ dashboard.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     method: 'get',
 })
 /**
- * @see routes/web.php:32
+ * @see routes/web.php:38
  * @route '/dashboard'
  */
 dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -555,7 +633,7 @@ dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 })
 
     /**
- * @see routes/web.php:32
+ * @see routes/web.php:38
  * @route '/dashboard'
  */
     const dashboardForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -564,7 +642,7 @@ dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     })
 
             /**
- * @see routes/web.php:32
+ * @see routes/web.php:38
  * @route '/dashboard'
  */
         dashboardForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -572,7 +650,7 @@ dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             method: 'get',
         })
             /**
- * @see routes/web.php:32
+ * @see routes/web.php:38
  * @route '/dashboard'
  */
         dashboardForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({

@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\SiswaController::store
- * @see app/Http/Controllers/SiswaController.php:33
+ * @see app/Http/Controllers/SiswaController.php:35
  * @route '/siswa'
  */
 export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -16,7 +16,7 @@ store.definition = {
 
 /**
 * @see \App\Http\Controllers\SiswaController::store
- * @see app/Http/Controllers/SiswaController.php:33
+ * @see app/Http/Controllers/SiswaController.php:35
  * @route '/siswa'
  */
 store.url = (options?: RouteQueryOptions) => {
@@ -25,7 +25,7 @@ store.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\SiswaController::store
- * @see app/Http/Controllers/SiswaController.php:33
+ * @see app/Http/Controllers/SiswaController.php:35
  * @route '/siswa'
  */
 store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -35,7 +35,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
     /**
 * @see \App\Http\Controllers\SiswaController::store
- * @see app/Http/Controllers/SiswaController.php:33
+ * @see app/Http/Controllers/SiswaController.php:35
  * @route '/siswa'
  */
     const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -45,7 +45,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
             /**
 * @see \App\Http\Controllers\SiswaController::store
- * @see app/Http/Controllers/SiswaController.php:33
+ * @see app/Http/Controllers/SiswaController.php:35
  * @route '/siswa'
  */
         storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -56,7 +56,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     store.form = storeForm
 /**
 * @see \App\Http\Controllers\SiswaController::update
- * @see app/Http/Controllers/SiswaController.php:58
+ * @see app/Http/Controllers/SiswaController.php:60
  * @route '/siswa/{siswa}'
  */
 export const update = (args: { siswa: number | { id: number } } | [siswa: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -71,7 +71,7 @@ update.definition = {
 
 /**
 * @see \App\Http\Controllers\SiswaController::update
- * @see app/Http/Controllers/SiswaController.php:58
+ * @see app/Http/Controllers/SiswaController.php:60
  * @route '/siswa/{siswa}'
  */
 update.url = (args: { siswa: number | { id: number } } | [siswa: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
@@ -104,7 +104,7 @@ update.url = (args: { siswa: number | { id: number } } | [siswa: number | { id: 
 
 /**
 * @see \App\Http\Controllers\SiswaController::update
- * @see app/Http/Controllers/SiswaController.php:58
+ * @see app/Http/Controllers/SiswaController.php:60
  * @route '/siswa/{siswa}'
  */
 update.put = (args: { siswa: number | { id: number } } | [siswa: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -114,7 +114,7 @@ update.put = (args: { siswa: number | { id: number } } | [siswa: number | { id: 
 
     /**
 * @see \App\Http\Controllers\SiswaController::update
- * @see app/Http/Controllers/SiswaController.php:58
+ * @see app/Http/Controllers/SiswaController.php:60
  * @route '/siswa/{siswa}'
  */
     const updateForm = (args: { siswa: number | { id: number } } | [siswa: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -129,7 +129,7 @@ update.put = (args: { siswa: number | { id: number } } | [siswa: number | { id: 
 
             /**
 * @see \App\Http\Controllers\SiswaController::update
- * @see app/Http/Controllers/SiswaController.php:58
+ * @see app/Http/Controllers/SiswaController.php:60
  * @route '/siswa/{siswa}'
  */
         updateForm.put = (args: { siswa: number | { id: number } } | [siswa: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -145,7 +145,7 @@ update.put = (args: { siswa: number | { id: number } } | [siswa: number | { id: 
     update.form = updateForm
 /**
 * @see \App\Http\Controllers\SiswaController::destroy
- * @see app/Http/Controllers/SiswaController.php:67
+ * @see app/Http/Controllers/SiswaController.php:69
  * @route '/siswa/{siswa}'
  */
 export const destroy = (args: { siswa: number | { id: number } } | [siswa: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -160,7 +160,7 @@ destroy.definition = {
 
 /**
 * @see \App\Http\Controllers\SiswaController::destroy
- * @see app/Http/Controllers/SiswaController.php:67
+ * @see app/Http/Controllers/SiswaController.php:69
  * @route '/siswa/{siswa}'
  */
 destroy.url = (args: { siswa: number | { id: number } } | [siswa: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
@@ -193,7 +193,7 @@ destroy.url = (args: { siswa: number | { id: number } } | [siswa: number | { id:
 
 /**
 * @see \App\Http\Controllers\SiswaController::destroy
- * @see app/Http/Controllers/SiswaController.php:67
+ * @see app/Http/Controllers/SiswaController.php:69
  * @route '/siswa/{siswa}'
  */
 destroy.delete = (args: { siswa: number | { id: number } } | [siswa: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -203,7 +203,7 @@ destroy.delete = (args: { siswa: number | { id: number } } | [siswa: number | { 
 
     /**
 * @see \App\Http\Controllers\SiswaController::destroy
- * @see app/Http/Controllers/SiswaController.php:67
+ * @see app/Http/Controllers/SiswaController.php:69
  * @route '/siswa/{siswa}'
  */
     const destroyForm = (args: { siswa: number | { id: number } } | [siswa: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -218,7 +218,7 @@ destroy.delete = (args: { siswa: number | { id: number } } | [siswa: number | { 
 
             /**
 * @see \App\Http\Controllers\SiswaController::destroy
- * @see app/Http/Controllers/SiswaController.php:67
+ * @see app/Http/Controllers/SiswaController.php:69
  * @route '/siswa/{siswa}'
  */
         destroyForm.delete = (args: { siswa: number | { id: number } } | [siswa: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
